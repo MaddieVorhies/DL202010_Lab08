@@ -29,4 +29,29 @@ module sseg4(
     input dp,
     input [3:0] an
     );
+    
+    wire [15:0] in0_mux2;
+    wire [15:0] out_mux2;
+    wire [3:0] in;
+    wire [6:0] in0_1;
+    
+    bcd11 bcd (
+       .B(data[10:0]),
+       .ones(in0_mux2[3:0]),
+       .tens(in0_mux2[7:4]),
+       .hundreds(in0_mux2[11:8]),
+       .thousands(in0_mux2[15:12])
+    );
+    
+    mux2 mux_0 (
+       .in1(data[15:0]), 
+       .in0({thousands, hundreds, tens, ones}),
+       .out(out_mux2[15:0])
+   );
+    
+       
+   
+    
+    
+    
 endmodule

@@ -1,0 +1,17 @@
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/XilinxVivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mux2_test_behav xil_defaultlib.mux2_test xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 7 for port 'in0' [H:/DL202010_Lab08/Lab08/systemverilog/mux2_test.sv:33]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 7 for port 'in1' [H:/DL202010_Lab08/Lab08/systemverilog/mux2_test.sv:34]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 7 for port 'out' [H:/DL202010_Lab08/Lab08/systemverilog/mux2_test.sv:36]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.mux2(BITS=7)
+Compiling module xil_defaultlib.mux2_test
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot mux2_test_behav

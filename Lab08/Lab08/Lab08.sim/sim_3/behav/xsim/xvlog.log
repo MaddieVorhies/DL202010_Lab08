@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/mux4.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/mux4_test.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux4_test
