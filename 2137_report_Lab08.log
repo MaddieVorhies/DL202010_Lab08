@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2020.10.7)  20 OCT 2020 23:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2020.10.7)  20 OCT 2020 23:33
 entering extended mode
 **./2137_report_Lab08.tex
 (2137_report_Lab08.tex
@@ -267,7 +267,14 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\dvipsnam.def"
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ))
-(2137_report_Lab08.aux)
+(2137_report_Lab08.aux
+
+LaTeX Warning: Label `fig:sim_with_table' multiply defined.
+
+
+LaTeX Warning: Label `fig:sim_with_table' multiply defined.
+
+)
 \openout1 = `2137_report_Lab08.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
@@ -378,7 +385,35 @@ File: mux2_sim.png Graphic file (type png)
 <use mux2_sim.png>
 Package pdftex.def Info: mux2_sim.png  used on input line 89.
 (pdftex.def)             Requested size: 469.75502pt x 110.45387pt.
+<mux4_sim.png, id=6, 1444.64719pt x 874.01532pt>
+File: mux4_sim.png Graphic file (type png)
+<use mux4_sim.png>
+Package pdftex.def Info: mux4_sim.png  used on input line 110.
+(pdftex.def)             Requested size: 469.75502pt x 110.55629pt.
+<an_decoder_sim.png, id=8, 1445.4pt x 872.50969pt>
+File: an_decoder_sim.png Graphic file (type png)
+<use an_decoder_sim.png>
+Package pdftex.def Info: an_decoder_sim.png  used on input line 127.
+(pdftex.def)             Requested size: 469.75502pt x 109.5619pt.
 
+
+! LaTeX Error: File `TCL' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.135 ...idth=1\textwidth,trim=0 0 0 0, clip]{TCL}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[1
+
+{C:/Users/Maddie_Vorhies1/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <.
+/mux2_sim.png>] [2 <./mux4_sim.png> <./an_decoder_sim.png>]
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
@@ -389,7 +424,7 @@ File: lstlang2.sty 2015/06/04 1.6 listings language file
 File: lstlang3.sty 2015/06/04 1.6 listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 98.
+nput line 141.
 
 (Lab08/systemverilog/mux2.sv
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
@@ -399,10 +434,7 @@ Overfull \hbox (54.244pt too wide) in paragraph at lines 2--3
 [][][][] 
  []
 
-[1
 
-{C:/Users/Maddie_Vorhies1/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <.
-/mux2_sim.png>]
 Overfull \hbox (54.244pt too wide) in paragraph at lines 20--23
 [][][][] 
  []
@@ -412,7 +444,9 @@ Overfull \hbox (54.244pt too wide) in paragraph at lines 2--3
 [][][][] 
  []
 
-[2]
+[3
+
+]
 Overfull \hbox (54.244pt too wide) in paragraph at lines 20--23
 [][][][] 
  []
@@ -422,12 +456,12 @@ Overfull \hbox (54.244pt too wide) in paragraph at lines 2--3
 [][][][] 
  []
 
-
+[4]
 Overfull \hbox (54.244pt too wide) in paragraph at lines 20--23
 [][][][] 
  []
 
-[3]) (Lab08/systemverilog/sseg4.sv
+) (Lab08/systemverilog/sseg4.sv
 Overfull \hbox (54.244pt too wide) in paragraph at lines 2--3
 [][][][] 
  []
@@ -437,7 +471,7 @@ Overfull \hbox (54.244pt too wide) in paragraph at lines 20--23
 [][][][] 
  []
 
-[4]) [5] (Lab08/systemverilog/sseg4_manual.sv
+[5] [6]) (Lab08/systemverilog/sseg4_manual.sv
 Overfull \hbox (54.244pt too wide) in paragraph at lines 2--3
 [][][][] 
  []
@@ -448,32 +482,36 @@ Overfull \hbox (54.244pt too wide) in paragraph at lines 20--23
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 109.
- [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 109.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 152.
+ [7]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 152.
  (2137_report_Lab08.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 109.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 109.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 152.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 152.
 Package rerunfilecheck Info: File `2137_report_Lab08.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 109.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 152.
  ) 
 Here is how much of TeX's memory you used:
- 8136 strings out of 493308
- 118670 string characters out of 3138738
- 304965 words of memory out of 3000000
- 11345 multiletter control sequences out of 15000+200000
+ 8163 strings out of 493308
+ 118945 string characters out of 3138738
+ 307877 words of memory out of 3000000
+ 11353 multiletter control sequences out of 15000+200000
  8364 words of font info for 30 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,8n,52p,847b,1959s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,8n,52p,847b,1761s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on 2137_report_Lab08.pdf (6 pages, 195109 bytes).
+Output written on 2137_report_Lab08.pdf (7 pages, 349169 bytes).
 PDF statistics:
- 357 PDF objects out of 1000 (max. 8388607)
- 255 named destinations out of 1000 (max. 500000)
- 12 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 375 PDF objects out of 1000 (max. 8388607)
+ 259 named destinations out of 1000 (max. 500000)
+ 34 words of extra memory for PDF output out of 10000 (max. 10000000)
 

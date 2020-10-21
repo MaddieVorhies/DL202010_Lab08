@@ -92,6 +92,49 @@ My goal in this lab was to create a 4-digit display and add the ability to switc
 	
 \end{figure}
 
+\begin{figure}[ht]\centering
+	\begin{tabular}[ht]{c|c|c|c|c|c|c}
+		Time (ns) & in0 & in1 & in2 & in3 & sel & output\\
+		\midrule
+		0 & 0110 & 1011 & 0110 & ffff & 2'b00 & 0110\\
+		10 & 0110 & 1011 & 0110 & ffff & 2'b01 & 1011\\
+		20 & 0110 & 1011 & 0110 & ffff & 2'b10 & 0110\\
+		30 & 0110 & 1011 & 0110 & ffff & 2'b11 & ffff\\
+		40 & aaaa & cccc & 0111 & 1001 & 2'b00 & aaaa\\
+		50 & aaaa & cccc & 0111 & 1001 & 2'b01 & cccc\\
+		60 & aaaa & cccc & 0111 & 1001 & 2'b10 & 0111\\
+		70 & aaaa & cccc & 0111 & 1001 & 2'b11 & 1001\\
+		\bottomrule
+	\end{tabular}\medskip
+	
+	\includegraphics [width=1.0\textwidth,trim=640 550 10 135, clip]{mux4_sim}
+	\caption{Simulation Waveform and ERT of mux4}
+	\label{fig:sim_with_table}
+	
+\end{figure}
+
+\begin{figure}[ht]\centering
+	\begin{tabular}[ht]{c|c|c}
+		Time (ns) & in & out\\
+		\midrule
+		0 & 00 & 1110\\
+		10 & 01 & 1101\\
+		20 & 10 & 1011\\
+		30 & 11 & 0111\\
+		\bottomrule
+	\end{tabular}\medskip
+	
+	\includegraphics [width=1.0\textwidth,trim=640 550 10 135, clip]{an_decoder_sim}
+	\caption{Simulation Waveform and ERT of Anode Decoder}
+	\label{fig:sim_with_table}
+	
+\end{figure}
+
+\begin{figure}[ht]\centering
+	\caption{TCL Console Output for Top-Level Simulation}
+	\includegraphics [width=1\textwidth,trim=0 0 0 0, clip]{TCL}
+\end{figure}
+
 
 \section*{Code}
 
