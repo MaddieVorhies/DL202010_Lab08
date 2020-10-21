@@ -1,0 +1,27 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+    +--------- Digit 3 (? = incorrect segment values)
+    |+-------- Decimal point
+    ||+------- Digit 2 (? = incorrect segment values)
+    |||+------ Decimal point
+    ||||+----- Digit 1 (? = incorrect segment values)
+    |||||+---- Decimal point
+    ||||||+--- Digit 0 (? = incorrect segment values)
+    |||||||+-- Decimal point
+    ||||||||
+-->       0 
+-->       C 
+-->       2 
+-->     1   
+-->   0     
+-->   1     
+-->     4   
+-->       0 
+--> 0       
+--> 1       
+--> 0       
+--> -       
+-->   4     
+-->     8   
+-->       C 
+$finish called at time : 150 ns : File "H:/DL202010_Lab08/basys3.sv" Line 98

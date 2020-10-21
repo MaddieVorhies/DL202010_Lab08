@@ -26,4 +26,16 @@ module sseg4_manual(
     output dp,
     output [3:0] an
     );
+    
+    sseg4 sseg4_man (
+       .data({4'b0000, sw[11:0]}),
+       .hex_dec(sw[15]),
+       .sign(sw[14]),
+       .digit_sel(sw[13:12]),
+       .seg(seg[6:0]), 
+       .dp(dp), 
+       .an(an[3:0])
+    );
+    
+    
 endmodule

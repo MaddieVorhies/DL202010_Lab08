@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/add3.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module add3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/bcd11.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bcd11
+INFO: [VRFC 10-2263] Analyzing Verilog file "H:/DL202010_Lab08/Lab08/Lab08.sim/sim_6/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

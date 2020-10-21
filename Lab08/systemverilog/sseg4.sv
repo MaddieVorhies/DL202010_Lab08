@@ -30,31 +30,31 @@ module sseg4(
     input [3:0] an
     );
     
-    wire [15:0] in0_mux2;
+    wire [15:0] bcd11_out;
     wire [15:0] out_mux2;
-    wire [3:0] in;
-    wire [6:0] in0_1;
-    reg [6:0] in1_1;
-    wire and_out;
+    wire [3:0] mux4out;
+    wire [6:0] dec_out;
+    wire [3:0] andec_out;
+    wire mux2_sel;
     
     bcd11 bcd (
        .B(data[10:0]),
-       .ones(in0_mux2[3:0]),
-       .tens(in0_mux2[7:4]),
-       .hundreds(in0_mux2[11:8]),
-       .thousands(in0_mux2[15:12])
+       .ones(bcd11_out[3:0]),
+       .tens(bcd11_out[7:4]),
+       .hundreds(bcd11_out[11:8]),
+       .thousands(bcd11_out[15:12])
     );
     
-    mux2 mux2_0 (
+    mux2 #(.BITS(16)) mux2_0 (
        .in1(data[15:0]), 
-       .in0({thousands, hundreds, tens, ones}),
+       .in0(bcd11_out[15:0]),
        .out(out_mux2[15:0]),
        .sel(hex_dec)
    );
    
-   mux4 mux4_0 (
+   mux4 #(.BITS(16)) mux4_0 (
       .sel(digit_sel[1:0]),
-      .out(in[3:0]),
+      .out(mux4out[3:0]),
       .in3(out_mux2[15:12]),
       .in2(out_mux2[11:8]),
       .in1(out_mux2[7:4]),
@@ -62,27 +62,24 @@ module sseg4(
    );
    
    sseg_decoder sseg_dec ( 
-      .num(in[3:0]), 
-      .sseg(in0_1[6:0])
+      .num(mux4out[3:0]), 
+      .sseg(dec_out[6:0])
    );
    
-   mux2 mux2_1 (
-      .in1(in1_1[6:0]), 
-      .in0(in0_1[6:0]), 
-      .sel(and_out),
+   assign mux2_sel = sign & ~andec_out[3];
+   assign an = andec_out;
+   assign dp = 1'b1;
+   
+   mux2 #(.BITS(16)) mux2_1 (
+      .in1(7'b0111111), 
+      .in0(dec_out[6:0]), 
+      .sel(mux2_sel),
       .out(seg[6:0])
    );
    
    an_decoder an_dec (
       .in(digit_sel[1:0]), 
-      .out(an[3:0])
-   );
-    
-   assign and_out = sign & ~an[3];
-   assign dp = 1'b1;
-   assign in1_1[6:0] = 7'b0111111;
-   
-    
-    
+      .out(andec_out[3:0])
+   ); 
     
 endmodule

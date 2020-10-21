@@ -40,7 +40,7 @@ module sseg_decoder(
          4'h9: sseg = 7'b0011000;
          4'hA: sseg = 7'b0001000;
          4'hB: sseg = 7'b0000011;
-         4'hC: sseg = 7'b0100111;
+         4'hC: sseg = 7'b1000110;
          4'hD: sseg = 7'b0100001;
          4'hE: sseg = 7'b0000110;
          default: sseg = 7'b0001110;

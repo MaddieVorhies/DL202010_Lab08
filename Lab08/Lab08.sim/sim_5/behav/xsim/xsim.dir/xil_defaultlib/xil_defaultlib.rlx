@@ -1,0 +1,15 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
+H:/DL202010_Lab08/Lab08/systemverilog/add3.sv,1602779001,systemVerilog,,H:/DL202010_Lab08/Lab08/systemverilog/an_decoder.sv,,add3,,,,,,,,
+H:/DL202010_Lab08/Lab08/systemverilog/an_decoder.sv,1602784237,systemVerilog,,H:/DL202010_Lab08/Lab08/systemverilog/bcd11.sv,,an_decoder,,,,,,,,
+H:/DL202010_Lab08/Lab08/systemverilog/bcd11.sv,1602780381,systemVerilog,,H:/DL202010_Lab08/disp.sv,,bcd11,,,,,,,,
+H:/DL202010_Lab08/Lab08/systemverilog/mux2.sv,1602780376,systemVerilog,,H:/DL202010_Lab08/Lab08/systemverilog/mux4.sv,,mux2,,,,,,,,
+H:/DL202010_Lab08/Lab08/systemverilog/mux4.sv,1603247924,systemVerilog,,H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv,,mux4,,,,,,,,
+H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv,1603246686,systemVerilog,,H:/DL202010_Lab08/Lab08/systemverilog/sseg4_manual.sv,,sseg4,,,,,,,,
+H:/DL202010_Lab08/Lab08/systemverilog/sseg4_manual.sv,1603244671,systemVerilog,,H:/DL202010_Lab08/Lab08/systemverilog/sseg_decoder.sv,,sseg4_manual,,,,,,,,
+H:/DL202010_Lab08/Lab08/systemverilog/sseg_decoder.sv,1603248485,systemVerilog,,H:/DL202010_Lab08/basys3.sv,,sseg_decoder,,,,,,,,
+H:/DL202010_Lab08/basys3.sv,1602777773,systemVerilog,,,,basys3,,,,,,,,
+H:/DL202010_Lab08/disp.sv,1602777800,systemVerilog,,H:/DL202010_Lab08/Lab08/systemverilog/mux2.sv,,disp,,,,,,,,

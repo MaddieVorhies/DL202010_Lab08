@@ -27,7 +27,7 @@ module mux4
    input [BITS-1:0] in1,
    input [BITS-1:0] in2,
    input [BITS-1:0] in3,
-   input sel,
+   input [1:0] sel,
    output reg [BITS-1:0] out
    );
    

@@ -18,3 +18,105 @@ close [ open H:/DL202010_Lab08/Lab08/systemverilog/sseg4_manual.sv w ]
 add_files H:/DL202010_Lab08/Lab08/systemverilog/sseg4_manual.sv
 update_compile_order -fileset sources_1
 file mkdir H:/DL202010_Lab08/Lab08/Lab08.srcs/constrs_1
+create_fileset -simset sim_5
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_5]
+add_files -fileset sim_5 -norecurse H:/DL202010_Lab08/basys3.sv
+update_compile_order -fileset sim_5
+create_fileset -simset sim_6
+set_property SOURCE_SET sources_1 [get_filesets sim_6]
+add_files -fileset sim_6 -norecurse H:/DL202010_Lab08/disp.sv
+update_compile_order -fileset sim_6
+add_files -fileset constrs_1 -norecurse H:/DL202010_Lab07/Lab07/Basys3_Lab07.xdc
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top disp [get_filesets sim_6]
+set_property top_lib xil_defaultlib [get_filesets sim_6]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_6
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top basys3 [get_filesets sim_5]
+set_property top_lib xil_defaultlib [get_filesets sim_5]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_5
+current_fileset -simset [ get_filesets sim_5 ]
+update_compile_order -fileset sources_1
+launch_simulation -simset [get_filesets sim_5 ]
+set_property SOURCE_SET sources_1 [get_filesets sim_5]
+add_files -fileset sim_5 -norecurse H:/DL202010_Lab08/disp.sv
+update_compile_order -fileset sim_5
+launch_simulation -simset [get_filesets sim_5 ]
+source basys3.tcl
+close_sim
+launch_simulation -simset [get_filesets sim_5 ]
+source basys3.tcl
+close_sim
+launch_simulation -simset [get_filesets sim_5 ]
+source basys3.tcl
+close_sim
+launch_simulation -simset [get_filesets sim_5 ]
+source basys3.tcl
+close_sim
+launch_simulation -simset [get_filesets sim_5 ]
+source basys3.tcl
+close_sim
+launch_simulation -simset [get_filesets sim_5 ]
+source basys3.tcl
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {H:/DL202010_Lab08/Lab08/Lab08.runs/impl_1/sseg4_manual.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {H:/DL202010_Lab08/Lab08/Lab08.runs/impl_1/sseg4_manual.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw_manager
+close_sim
+launch_simulation -simset [get_filesets sim_5 ]
+source basys3.tcl
+close_sim
+launch_simulation -simset [get_filesets sim_5 ]
+source basys3.tcl
+close_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {H:/DL202010_Lab08/Lab08/Lab08.runs/impl_1/sseg4_manual.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {H:/DL202010_Lab08/Lab08/Lab08.runs/impl_1/sseg4_manual.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw_manager
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top bcd11 [get_filesets sim_6]
+set_property top_lib xil_defaultlib [get_filesets sim_6]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_6
+current_fileset -simset [ get_filesets sim_6 ]
+launch_simulation -simset [get_filesets sim_6 ]
+source bcd11.tcl
+close_sim

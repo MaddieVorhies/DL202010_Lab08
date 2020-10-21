@@ -26,3 +26,1109 @@ close [ open H:/DL202010_Lab08/Lab08/systemverilog/sseg4_manual.sv w ]
 add_files H:/DL202010_Lab08/Lab08/systemverilog/sseg4_manual.sv
 update_compile_order -fileset sources_1
 file mkdir H:/DL202010_Lab08/Lab08/Lab08.srcs/constrs_1
+create_fileset -simset sim_5
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_5]
+add_files -fileset sim_5 -norecurse H:/DL202010_Lab08/basys3.sv
+update_compile_order -fileset sim_5
+create_fileset -simset sim_6
+set_property SOURCE_SET sources_1 [get_filesets sim_6]
+add_files -fileset sim_6 -norecurse H:/DL202010_Lab08/disp.sv
+update_compile_order -fileset sim_6
+add_files -fileset constrs_1 -norecurse H:/DL202010_Lab07/Lab07/Basys3_Lab07.xdc
+set_property top disp [get_filesets sim_6]
+set_property top_lib xil_defaultlib [get_filesets sim_6]
+update_compile_order -fileset sim_6
+set_property top basys3 [get_filesets sim_5]
+set_property top_lib xil_defaultlib [get_filesets sim_5]
+update_compile_order -fileset sim_5
+current_fileset -simset [ get_filesets sim_5 ]
+update_compile_order -fileset sources_1
+launch_simulation -simset [get_filesets sim_5 ]
+Command: launch_simulation -simset sim_5
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_5'
+INFO: [SIM-utils-54] Inspecting design source files for 'basys3' in fileset 'sim_5'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_5'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+"xvlog --incr --relax -prj basys3_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/add3.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module add3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/an_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module an_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/bcd11.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bcd11
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/mux2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/mux4.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg4
+INFO: [VRFC 10-2458] undeclared symbol thousands, assumed default net type wire [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:50]
+INFO: [VRFC 10-2458] undeclared symbol hundreds, assumed default net type wire [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:50]
+INFO: [VRFC 10-2458] undeclared symbol tens, assumed default net type wire [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:50]
+INFO: [VRFC 10-2458] undeclared symbol ones, assumed default net type wire [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:50]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg4_manual.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg4_manual
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/basys3.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module basys3
+INFO: [VRFC 10-2263] Analyzing Verilog file "H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+"xelab -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot basys3_behav xil_defaultlib.basys3 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/XilinxVitis/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot basys3_behav xil_defaultlib.basys3 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-2063] Module <disp> not found while processing module instance <disp_inst> [H:/DL202010_Lab08/basys3.sv:32]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-99] Step results log file:'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 1038.500 ; gain = 19.742
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+set_property SOURCE_SET sources_1 [get_filesets sim_5]
+add_files -fileset sim_5 -norecurse H:/DL202010_Lab08/disp.sv
+update_compile_order -fileset sim_5
+launch_simulation -simset [get_filesets sim_5 ]
+Command: launch_simulation -simset sim_5
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_5'
+INFO: [SIM-utils-54] Inspecting design source files for 'basys3' in fileset 'sim_5'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_5'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+"xvlog --incr --relax -prj basys3_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/disp.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module disp
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+"xelab -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot basys3_behav xil_defaultlib.basys3 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/XilinxVitis/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot basys3_behav xil_defaultlib.basys3 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 4 for port 'in1' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:49]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 4 for port 'out' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:51]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 1 for port 'sel' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:56]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 4 for port 'in1' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:70]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 4 for port 'in0' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:71]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 4 for port 'out' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:73]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.add3
+Compiling module xil_defaultlib.bcd11
+Compiling module xil_defaultlib.mux2
+Compiling module xil_defaultlib.mux4
+Compiling module xil_defaultlib.sseg_decoder
+Compiling module xil_defaultlib.an_decoder
+Compiling module xil_defaultlib.sseg4
+Compiling module xil_defaultlib.sseg4_manual
+Compiling module xil_defaultlib.disp
+Compiling module xil_defaultlib.basys3
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot basys3_behav
+
+****** Webtalk v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim/xsim.dir/basys3_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Tue Oct 20 20:50:44 2020...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 1038.500 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "basys3_behav -key {Behavioral:sim_5:Functional:basys3} -tclbatch {basys3.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source basys3.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+    +--------- Digit 3 (? = incorrect segment values)
+    |+-------- Decimal point
+    ||+------- Digit 2 (? = incorrect segment values)
+    |||+------ Decimal point
+    ||||+----- Digit 1 (? = incorrect segment values)
+    |||||+---- Decimal point
+    ||||||+--- Digit 0 (? = incorrect segment values)
+    |||||||+-- Decimal point
+    ||||||||
+-->       ? 
+-->       ? 
+-->       ? 
+-->     ?   
+-->   ?     
+-->   ?     
+-->     ?   
+-->       ? 
+--> ?       
+--> ?       
+--> ?       
+--> ?       
+-->   ?     
+-->     ?   
+-->       ? 
+$finish called at time : 150 ns : File "H:/DL202010_Lab08/basys3.sv" Line 98
+xsim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1060.973 ; gain = 22.473
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'basys3_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:17 . Memory (MB): peak = 1060.973 ; gain = 22.473
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1108.910 ; gain = 47.840
+launch_simulation -simset [get_filesets sim_5 ]
+Command: launch_simulation -simset sim_5
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_5'
+INFO: [SIM-utils-54] Inspecting design source files for 'basys3' in fileset 'sim_5'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_5'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+"xvlog --incr --relax -prj basys3_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/add3.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module add3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/an_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module an_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/bcd11.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bcd11
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/disp.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module disp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/mux2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/mux4.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg4
+INFO: [VRFC 10-2458] undeclared symbol thousands, assumed default net type wire [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:50]
+INFO: [VRFC 10-2458] undeclared symbol hundreds, assumed default net type wire [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:50]
+INFO: [VRFC 10-2458] undeclared symbol tens, assumed default net type wire [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:50]
+INFO: [VRFC 10-2458] undeclared symbol ones, assumed default net type wire [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:50]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg4_manual.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg4_manual
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/basys3.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module basys3
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+"xelab -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot basys3_behav xil_defaultlib.basys3 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/XilinxVitis/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot basys3_behav xil_defaultlib.basys3 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'in0' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:50]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 1 for port 'sel' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:56]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 4 for port 'in1' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:70]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 4 for port 'in0' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:71]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 4 for port 'out' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:73]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.add3
+Compiling module xil_defaultlib.bcd11
+Compiling module xil_defaultlib.mux2(BITS=16)
+Compiling module xil_defaultlib.mux4
+Compiling module xil_defaultlib.sseg_decoder
+Compiling module xil_defaultlib.mux2
+Compiling module xil_defaultlib.an_decoder
+Compiling module xil_defaultlib.sseg4
+Compiling module xil_defaultlib.sseg4_manual
+Compiling module xil_defaultlib.disp
+Compiling module xil_defaultlib.basys3
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot basys3_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "basys3_behav -key {Behavioral:sim_5:Functional:basys3} -tclbatch {basys3.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source basys3.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+    +--------- Digit 3 (? = incorrect segment values)
+    |+-------- Decimal point
+    ||+------- Digit 2 (? = incorrect segment values)
+    |||+------ Decimal point
+    ||||+----- Digit 1 (? = incorrect segment values)
+    |||||+---- Decimal point
+    ||||||+--- Digit 0 (? = incorrect segment values)
+    |||||||+-- Decimal point
+    ||||||||
+-->       ? 
+-->       ? 
+-->       ? 
+-->     ?   
+-->   ?     
+-->   ?     
+-->     ?   
+-->       ? 
+--> ?       
+--> ?       
+--> ?       
+--> ?       
+-->   ?     
+-->     ?   
+-->       ? 
+$finish called at time : 150 ns : File "H:/DL202010_Lab08/basys3.sv" Line 98
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'basys3_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1108.910 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation -simset [get_filesets sim_5 ]
+Command: launch_simulation -simset sim_5
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_5'
+INFO: [SIM-utils-54] Inspecting design source files for 'basys3' in fileset 'sim_5'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_5'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+"xvlog --incr --relax -prj basys3_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/add3.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module add3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/an_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module an_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/bcd11.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bcd11
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/disp.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module disp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/mux2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/mux4.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg4_manual.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg4_manual
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/basys3.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module basys3
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+"xelab -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot basys3_behav xil_defaultlib.basys3 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/XilinxVitis/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot basys3_behav xil_defaultlib.basys3 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 1 for port 'sel' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:56]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 4 for port 'in1' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:70]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 4 for port 'in0' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:71]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 4 for port 'out' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:73]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.add3
+Compiling module xil_defaultlib.bcd11
+Compiling module xil_defaultlib.mux2(BITS=16)
+Compiling module xil_defaultlib.mux4
+Compiling module xil_defaultlib.sseg_decoder
+Compiling module xil_defaultlib.mux2
+Compiling module xil_defaultlib.an_decoder
+Compiling module xil_defaultlib.sseg4
+Compiling module xil_defaultlib.sseg4_manual
+Compiling module xil_defaultlib.disp
+Compiling module xil_defaultlib.basys3
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot basys3_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "basys3_behav -key {Behavioral:sim_5:Functional:basys3} -tclbatch {basys3.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source basys3.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+    +--------- Digit 3 (? = incorrect segment values)
+    |+-------- Decimal point
+    ||+------- Digit 2 (? = incorrect segment values)
+    |||+------ Decimal point
+    ||||+----- Digit 1 (? = incorrect segment values)
+    |||||+---- Decimal point
+    ||||||+--- Digit 0 (? = incorrect segment values)
+    |||||||+-- Decimal point
+    ||||||||
+-->       ? 
+-->       ? 
+-->       ? 
+-->     ?   
+-->   ?     
+-->   ?     
+-->     ?   
+-->       ? 
+--> ?       
+--> ?       
+--> ?       
+--> ?       
+-->   ?     
+-->     ?   
+-->       ? 
+$finish called at time : 150 ns : File "H:/DL202010_Lab08/basys3.sv" Line 98
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'basys3_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1149.551 ; gain = 0.293
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation -simset [get_filesets sim_5 ]
+Command: launch_simulation -simset sim_5
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_5'
+INFO: [SIM-utils-54] Inspecting design source files for 'basys3' in fileset 'sim_5'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_5'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+"xvlog --incr --relax -prj basys3_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+"xelab -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot basys3_behav xil_defaultlib.basys3 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/XilinxVitis/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot basys3_behav xil_defaultlib.basys3 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 1 for port 'sel' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:56]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 4 for port 'in1' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:70]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 4 for port 'in0' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:71]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 4 for port 'out' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:73]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "basys3_behav -key {Behavioral:sim_5:Functional:basys3} -tclbatch {basys3.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source basys3.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+    +--------- Digit 3 (? = incorrect segment values)
+    |+-------- Decimal point
+    ||+------- Digit 2 (? = incorrect segment values)
+    |||+------ Decimal point
+    ||||+----- Digit 1 (? = incorrect segment values)
+    |||||+---- Decimal point
+    ||||||+--- Digit 0 (? = incorrect segment values)
+    |||||||+-- Decimal point
+    ||||||||
+-->       ? 
+-->       ? 
+-->       ? 
+-->     ?   
+-->   ?     
+-->   ?     
+-->     ?   
+-->       ? 
+--> ?       
+--> ?       
+--> ?       
+--> ?       
+-->   ?     
+-->     ?   
+-->       ? 
+$finish called at time : 150 ns : File "H:/DL202010_Lab08/basys3.sv" Line 98
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'basys3_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1153.473 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation -simset [get_filesets sim_5 ]
+Command: launch_simulation -simset sim_5
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_5'
+INFO: [SIM-utils-54] Inspecting design source files for 'basys3' in fileset 'sim_5'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_5'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+"xvlog --incr --relax -prj basys3_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/add3.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module add3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/an_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module an_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/bcd11.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bcd11
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/disp.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module disp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/mux2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/mux4.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg4_manual.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg4_manual
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/basys3.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module basys3
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+"xelab -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot basys3_behav xil_defaultlib.basys3 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/XilinxVitis/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot basys3_behav xil_defaultlib.basys3 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 1 for port 'sel' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:56]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'out' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:57]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'in3' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:58]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'in2' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:59]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'in1' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:60]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'in0' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:61]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 16 for port 'in1' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:73]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 16 for port 'in0' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:74]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 16 for port 'out' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:76]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.add3
+Compiling module xil_defaultlib.bcd11
+Compiling module xil_defaultlib.mux2(BITS=16)
+Compiling module xil_defaultlib.mux4(BITS=16)
+Compiling module xil_defaultlib.sseg_decoder
+Compiling module xil_defaultlib.an_decoder
+Compiling module xil_defaultlib.sseg4
+Compiling module xil_defaultlib.sseg4_manual
+Compiling module xil_defaultlib.disp
+Compiling module xil_defaultlib.basys3
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot basys3_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "basys3_behav -key {Behavioral:sim_5:Functional:basys3} -tclbatch {basys3.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source basys3.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+    +--------- Digit 3 (? = incorrect segment values)
+    |+-------- Decimal point
+    ||+------- Digit 2 (? = incorrect segment values)
+    |||+------ Decimal point
+    ||||+----- Digit 1 (? = incorrect segment values)
+    |||||+---- Decimal point
+    ||||||+--- Digit 0 (? = incorrect segment values)
+    |||||||+-- Decimal point
+    ||||||||
+-->       0.
+-->       ?.
+-->       2.
+-->     1.  
+-->   2.    
+-->   0.    
+-->     4.  
+-->       0.
+--> 4.      
+--> 6.      
+--> 8.      
+--> -.      
+-->   ?.    
+-->     8.  
+-->       ?.
+$finish called at time : 150 ns : File "H:/DL202010_Lab08/basys3.sv" Line 98
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'basys3_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 1158.773 ; gain = 5.301
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation -simset [get_filesets sim_5 ]
+Command: launch_simulation -simset sim_5
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_5'
+INFO: [SIM-utils-54] Inspecting design source files for 'basys3' in fileset 'sim_5'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_5'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+"xvlog --incr --relax -prj basys3_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/add3.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module add3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/an_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module an_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/bcd11.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bcd11
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/disp.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module disp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/mux2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/mux4.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg4_manual.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg4_manual
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/basys3.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module basys3
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+"xelab -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot basys3_behav xil_defaultlib.basys3 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/XilinxVitis/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot basys3_behav xil_defaultlib.basys3 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 1 for port 'sel' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:56]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'out' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:57]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'in3' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:58]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'in2' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:59]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'in1' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:60]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'in0' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:61]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 16 for port 'in1' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:74]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 16 for port 'in0' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:75]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 16 for port 'out' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:77]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.add3
+Compiling module xil_defaultlib.bcd11
+Compiling module xil_defaultlib.mux2(BITS=16)
+Compiling module xil_defaultlib.mux4(BITS=16)
+Compiling module xil_defaultlib.sseg_decoder
+Compiling module xil_defaultlib.an_decoder
+Compiling module xil_defaultlib.sseg4
+Compiling module xil_defaultlib.sseg4_manual
+Compiling module xil_defaultlib.disp
+Compiling module xil_defaultlib.basys3
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot basys3_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "basys3_behav -key {Behavioral:sim_5:Functional:basys3} -tclbatch {basys3.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source basys3.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+    +--------- Digit 3 (? = incorrect segment values)
+    |+-------- Decimal point
+    ||+------- Digit 2 (? = incorrect segment values)
+    |||+------ Decimal point
+    ||||+----- Digit 1 (? = incorrect segment values)
+    |||||+---- Decimal point
+    ||||||+--- Digit 0 (? = incorrect segment values)
+    |||||||+-- Decimal point
+    ||||||||
+-->       0 
+-->       ? 
+-->       2 
+-->     1   
+-->   2     
+-->   0     
+-->     4   
+-->       0 
+--> 4       
+--> 6       
+--> 8       
+--> -       
+-->   ?     
+-->     8   
+-->       ? 
+$finish called at time : 150 ns : File "H:/DL202010_Lab08/basys3.sv" Line 98
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'basys3_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:13 . Memory (MB): peak = 1158.773 ; gain = 0.000
+launch_runs synth_1 -jobs 4
+[Tue Oct 20 21:21:01 2020] Launched synth_1...
+Run output will be captured here: H:/DL202010_Lab08/Lab08/Lab08.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Tue Oct 20 21:22:20 2020] Launched impl_1...
+Run output will be captured here: H:/DL202010_Lab08/Lab08/Lab08.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue Oct 20 21:23:50 2020] Launched impl_1...
+Run output will be captured here: H:/DL202010_Lab08/Lab08/Lab08.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2020.1
+  **** Build date : May 27 2020 at 20:24:38
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+****** Xilinx cs_server v2020.1.0
+  **** Build date : May 13 2020-20:10:29
+    ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 1197.512 ; gain = 26.676
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A75CCFA
+open_hw_target: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2497.777 ; gain = 1300.266
+set_property PROGRAM.FILE {H:/DL202010_Lab08/Lab08/Lab08.runs/impl_1/sseg4_manual.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {H:/DL202010_Lab08/Lab08/Lab08.runs/impl_1/sseg4_manual.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw_manager
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation -simset [get_filesets sim_5 ]
+Command: launch_simulation -simset sim_5
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_5'
+INFO: [SIM-utils-54] Inspecting design source files for 'basys3' in fileset 'sim_5'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_5'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+"xvlog --incr --relax -prj basys3_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/add3.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module add3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/an_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module an_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/bcd11.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bcd11
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/disp.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module disp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/mux2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/mux4.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg4_manual.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg4_manual
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/basys3.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module basys3
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+"xelab -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot basys3_behav xil_defaultlib.basys3 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/XilinxVitis/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot basys3_behav xil_defaultlib.basys3 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'out' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:57]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'in3' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:58]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'in2' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:59]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'in1' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:60]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'in0' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:61]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 16 for port 'in1' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:74]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 16 for port 'in0' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:75]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 16 for port 'out' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:77]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.add3
+Compiling module xil_defaultlib.bcd11
+Compiling module xil_defaultlib.mux2(BITS=16)
+Compiling module xil_defaultlib.mux4(BITS=16)
+Compiling module xil_defaultlib.sseg_decoder
+Compiling module xil_defaultlib.an_decoder
+Compiling module xil_defaultlib.sseg4
+Compiling module xil_defaultlib.sseg4_manual
+Compiling module xil_defaultlib.disp
+Compiling module xil_defaultlib.basys3
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot basys3_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2796.098 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "basys3_behav -key {Behavioral:sim_5:Functional:basys3} -tclbatch {basys3.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source basys3.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+    +--------- Digit 3 (? = incorrect segment values)
+    |+-------- Decimal point
+    ||+------- Digit 2 (? = incorrect segment values)
+    |||+------ Decimal point
+    ||||+----- Digit 1 (? = incorrect segment values)
+    |||||+---- Decimal point
+    ||||||+--- Digit 0 (? = incorrect segment values)
+    |||||||+-- Decimal point
+    ||||||||
+-->       0 
+-->       ? 
+-->       2 
+-->     1   
+-->   0     
+-->   1     
+-->     4   
+-->       0 
+--> 0       
+--> 1       
+--> 0       
+--> -       
+-->   4     
+-->     8   
+-->       ? 
+$finish called at time : 150 ns : File "H:/DL202010_Lab08/basys3.sv" Line 98
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'basys3_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 2799.371 ; gain = 3.273
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation -simset [get_filesets sim_5 ]
+Command: launch_simulation -simset sim_5
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_5'
+INFO: [SIM-utils-54] Inspecting design source files for 'basys3' in fileset 'sim_5'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_5'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+"xvlog --incr --relax -prj basys3_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/add3.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module add3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/an_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module an_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/bcd11.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bcd11
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/disp.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module disp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/mux2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/mux4.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg4_manual.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg4_manual
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/sseg_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sseg_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/basys3.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module basys3
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+"xelab -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot basys3_behav xil_defaultlib.basys3 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/XilinxVitis/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot basys3_behav xil_defaultlib.basys3 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'out' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:57]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'in3' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:58]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'in2' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:59]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'in1' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:60]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'in0' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:61]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 16 for port 'in1' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:74]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 16 for port 'in0' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:75]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 16 for port 'out' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:77]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.add3
+Compiling module xil_defaultlib.bcd11
+Compiling module xil_defaultlib.mux2(BITS=16)
+Compiling module xil_defaultlib.mux4(BITS=16)
+Compiling module xil_defaultlib.sseg_decoder
+Compiling module xil_defaultlib.an_decoder
+Compiling module xil_defaultlib.sseg4
+Compiling module xil_defaultlib.sseg4_manual
+Compiling module xil_defaultlib.disp
+Compiling module xil_defaultlib.basys3
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot basys3_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_5/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "basys3_behav -key {Behavioral:sim_5:Functional:basys3} -tclbatch {basys3.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source basys3.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+    +--------- Digit 3 (? = incorrect segment values)
+    |+-------- Decimal point
+    ||+------- Digit 2 (? = incorrect segment values)
+    |||+------ Decimal point
+    ||||+----- Digit 1 (? = incorrect segment values)
+    |||||+---- Decimal point
+    ||||||+--- Digit 0 (? = incorrect segment values)
+    |||||||+-- Decimal point
+    ||||||||
+-->       0 
+-->       C 
+-->       2 
+-->     1   
+-->   0     
+-->   1     
+-->     4   
+-->       0 
+--> 0       
+--> 1       
+--> 0       
+--> -       
+-->   4     
+-->     8   
+-->       C 
+$finish called at time : 150 ns : File "H:/DL202010_Lab08/basys3.sv" Line 98
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'basys3_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 2825.512 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Tue Oct 20 21:52:03 2020] Launched synth_1...
+Run output will be captured here: H:/DL202010_Lab08/Lab08/Lab08.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Tue Oct 20 21:53:43 2020] Launched impl_1...
+Run output will be captured here: H:/DL202010_Lab08/Lab08/Lab08.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue Oct 20 21:57:01 2020] Launched impl_1...
+Run output will be captured here: H:/DL202010_Lab08/Lab08/Lab08.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2020.1
+  **** Build date : May 27 2020 at 20:24:38
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+****** Xilinx cs_server v2020.1.0
+  **** Build date : May 13 2020-20:10:29
+    ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 2942.418 ; gain = 0.000
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A75CCFA
+set_property PROGRAM.FILE {H:/DL202010_Lab08/Lab08/Lab08.runs/impl_1/sseg4_manual.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {H:/DL202010_Lab08/Lab08/Lab08.runs/impl_1/sseg4_manual.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183A75CCFA
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A75CCFA
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183A75CCFA
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A75CCFA
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+close_hw_manager
+set_property top bcd11 [get_filesets sim_6]
+set_property top_lib xil_defaultlib [get_filesets sim_6]
+update_compile_order -fileset sim_6
+current_fileset -simset [ get_filesets sim_6 ]
+launch_simulation -simset [get_filesets sim_6 ]
+Command: launch_simulation -simset sim_6
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_6/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_6'
+INFO: [SIM-utils-54] Inspecting design source files for 'bcd11' in fileset 'sim_6'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_6'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_6/behav/xsim'
+"xvlog --incr --relax -prj bcd11_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/add3.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module add3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/bcd11.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bcd11
+INFO: [VRFC 10-2263] Analyzing Verilog file "H:/DL202010_Lab08/Lab08/Lab08.sim/sim_6/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_6/behav/xsim'
+"xelab -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot bcd11_behav xil_defaultlib.bcd11 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/XilinxVitis/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 3132fbb7b4e840bdbb60d100d3ed967b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot bcd11_behav xil_defaultlib.bcd11 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.add3
+Compiling module xil_defaultlib.bcd11
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot bcd11_behav
+
+****** Webtalk v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source H:/DL202010_Lab08/Lab08/Lab08.sim/sim_6/behav/xsim/xsim.dir/bcd11_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Tue Oct 20 22:08:04 2020...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 2985.016 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'H:/DL202010_Lab08/Lab08/Lab08.sim/sim_6/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "bcd11_behav -key {Behavioral:sim_6:Functional:bcd11} -tclbatch {bcd11.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source bcd11.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'bcd11_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:13 . Memory (MB): peak = 2985.016 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 2985.016 ; gain = 0.000
