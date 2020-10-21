@@ -1,4 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/an_decoder.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module an_decoder
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/DL202010_Lab08/Lab08/systemverilog/an_decoder_test.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module an_decoder_test
