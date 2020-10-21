@@ -76,16 +76,17 @@ My goal in this lab was to create a 4-digit display and add the ability to switc
 \section*{Results}
 
 \begin{figure}[ht]\centering
-	\begin{tabular}[ht]{c|c|c|c}
-		Time (ns) & Input & Ouput & decimal\\
+	\begin{tabular}[ht]{c|c|c|c|c}
+		Time (ns) & in0 & in1 & sel & output\\
 		\midrule
-		0 & 10010011101 & 0001000110000001 & 1181\\
-		10 & 00110110110 & 0000010000111000 & 438\\
-		20 & 11100110001 & 0001100001000001 & 1841\\
+		0 & 0110 & 1001 & 0 & 0110\\
+		10 & 0110 & 1001 & 1 & 1001\\
+		20 & 0011 & 1011 & 0 & 0011\\
+		30 & 0011 & 1011 & 1 & 1011\\
 		\bottomrule
 	\end{tabular}\medskip
 	
-	\includegraphics [width=1.0\textwidth,trim=640 275 10 135, clip]{mux2_sim}
+	\includegraphics [width=1.0\textwidth,trim=640 550 10 135, clip]{mux2_sim}
 	\caption{Simulation Waveform and ERT of mux2}
 	\label{fig:sim_with_table}
 	

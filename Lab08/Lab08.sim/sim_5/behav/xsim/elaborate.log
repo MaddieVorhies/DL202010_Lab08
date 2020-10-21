@@ -13,18 +13,4 @@ WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 16 fo
 WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 16 for port 'in0' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:75]
 WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 16 for port 'out' [H:/DL202010_Lab08/Lab08/systemverilog/sseg4.sv:77]
 Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.add3
-Compiling module xil_defaultlib.bcd11
-Compiling module xil_defaultlib.mux2(BITS=16)
-Compiling module xil_defaultlib.mux4(BITS=16)
-Compiling module xil_defaultlib.sseg_decoder
-Compiling module xil_defaultlib.an_decoder
-Compiling module xil_defaultlib.sseg4
-Compiling module xil_defaultlib.sseg4_manual
-Compiling module xil_defaultlib.disp
-Compiling module xil_defaultlib.basys3
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot basys3_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

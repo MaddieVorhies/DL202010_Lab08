@@ -41,10 +41,14 @@ module mux4_test();
    );
    
    initial begin 
-      in0_t = 16'h0110 ; in1_t = 16'h1001 ; in2_t = 16'h0110 ; in3_t = 16'h1001 ; sel_t = 0; #10;
-      in0_t = 16'h0110 ; in1_t = 16'h1001 ; in2_t = 16'h0110 ; in3_t = 16'h1001 ; sel_t = 1; #10;
-      in0_t = 16'h0011 ; in1_t = 16'h1011 ; in2_t = 16'h0110 ; in3_t = 16'h1001 ; sel_t = 0; #10;
-      in0_t = 16'h0011 ; in1_t = 16'h1011 ; in2_t = 16'h0110 ; in3_t = 16'h1001 ; sel_t = 1; #10;
+      in0_t = 16'h0110 ; in1_t = 16'h1011 ; in2_t = 16'h0110 ; in3_t = 16'hffff ; sel_t = 2'b00; #10;
+      in0_t = 16'h0110 ; in1_t = 16'h1011 ; in2_t = 16'h0110 ; in3_t = 16'hffff ; sel_t = 2'b01; #10;
+      in0_t = 16'h0110 ; in1_t = 16'h1011 ; in2_t = 16'h0110 ; in3_t = 16'hffff ; sel_t = 2'b10; #10;
+      in0_t = 16'h0110 ; in1_t = 16'h1011 ; in2_t = 16'h0110 ; in3_t = 16'hffff ; sel_t = 2'b11; #10;
+      in0_t = 16'haaaa ; in1_t = 16'hcccc ; in2_t = 16'h0111 ; in3_t = 16'h1001 ; sel_t = 2'b00; #10;
+      in0_t = 16'haaaa ; in1_t = 16'hcccc ; in2_t = 16'h0111 ; in3_t = 16'h1001 ; sel_t = 2'b01; #10;
+      in0_t = 16'haaaa ; in1_t = 16'hcccc ; in2_t = 16'h0111 ; in3_t = 16'h1001 ; sel_t = 2'b10; #10;
+      in0_t = 16'haaaa ; in1_t = 16'hcccc ; in2_t = 16'h0111 ; in3_t = 16'h1001 ; sel_t = 2'b11; #10;
       
       $finish;
    
