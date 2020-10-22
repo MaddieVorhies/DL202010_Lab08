@@ -2,3 +2,6 @@ Running: xsim.dir/an_decoder_test_behav/xsimk.exe -simmode gui -wdb an_decoder_t
 Design successfully loaded
 Design Loading Memory Usage: 5884 KB (Peak: 5884 KB)
 Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 6544 KB (Peak: 6544 KB)
+Simulation CPU Usage: 0 ms

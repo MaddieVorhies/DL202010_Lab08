@@ -120,3 +120,22 @@ current_fileset -simset [ get_filesets sim_6 ]
 launch_simulation -simset [get_filesets sim_6 ]
 source bcd11.tcl
 close_sim
+current_fileset -simset [ get_filesets sim_2 ]
+launch_simulation -simset [get_filesets sim_2 ]
+source mux2_test.tcl
+close_sim
+current_fileset -simset [ get_filesets sim_5 ]
+launch_simulation -simset [get_filesets sim_5 ]
+source basys3.tcl
+close_sim
+current_fileset -simset [ get_filesets sim_3 ]
+launch_simulation -simset [get_filesets sim_3 ]
+source mux4_test.tcl
+close_sim
+launch_simulation -simset [get_filesets sim_3 ]
+source mux4_test.tcl
+close_sim
+current_fileset -simset [ get_filesets sim_4 ]
+launch_simulation -simset [get_filesets sim_4 ]
+source an_decoder_test.tcl
+close_sim
